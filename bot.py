@@ -22,7 +22,7 @@ async def check_tweets_for_user(username):
         user = client.get_user(username=username.strip())
         user_id = user.data.id
 
-        tweets = client.get_users_tweets(id=user_id, max_results=2)
+        tweets = client.get_users_tweets(id=user_id, max_results=5)
         if tweets.data:
             latest_tweet = tweets.data[0]
             last_seen_id = last_tweet_ids.get(user_id)
